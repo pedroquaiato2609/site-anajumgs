@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+.env*.local
+
+# dados do painel (mensagens e visitas)
+dados/
+
+# skills baixadas de terceiros (cada uma tem sua licenca)
+.claude/skills/

@@ -46,23 +46,12 @@ export const areas = [
   {
     titulo: "Comunicação",
     texto:
-      "Comunicação institucional, palestras sobre autocuidado e imagem pessoal. Gosto tanto de escrever quanto de falar.",
+      "Comunicação institucional e palestras sobre autocuidado. Gosto de escrever, estudar e falar sobre o tema.",
   },
   {
     titulo: "Eventos",
     texto: "Cobertura em tempo real como storymaker.",
   },
-];
-
-export const ferramentas = [
-  "Adobe Premiere",
-  "CapCut",
-  "Edits",
-  "Canva",
-  "Mlabs",
-  "Meta Business",
-  "RD Station",
-  "Adobe Photoshop (básico)",
 ];
 
 export const cursos = [

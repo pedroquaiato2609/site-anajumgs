@@ -22,7 +22,7 @@ import Casos from "@/components/Casos";
 import FormContato from "@/components/FormContato";
 import Header from "@/components/Header";
 import RegistroVisita from "@/components/RegistroVisita";
-import { areas, contato, cursos, ferramentas, selos, sobre } from "@/lib/content";
+import { areas, contato, cursos, selos, sobre } from "@/lib/content";
 
 // Fotografias originais, importadas diretamente de fotos-reais/ sem edição.
 import fotoPerfil from "@/fotos-reais/ana-julia-01.jpeg";
@@ -37,10 +37,10 @@ const d = (n: number) => ({ "--d": n }) as React.CSSProperties;
 const faixa = ["Comunicação", "Marketing", "Moda", "Social Media", "Audiovisual", "Storymaker", "Palestras"];
 
 const estiloAreas: { Icone: IconType; cartao: string; coluna: string }[] = [
-  { Icone: FaInstagram, cartao: "bg-vinho text-creme", coluna: "md:col-span-4" },
-  { Icone: LuVideo, cartao: "bg-fumaca text-chocolate", coluna: "md:col-span-4" },
-  { Icone: LuMessagesSquare, cartao: "bg-rosa text-vinho", coluna: "md:col-span-4" },
-  { Icone: LuSmartphone, cartao: "bg-chocolate text-creme", coluna: "md:col-span-5" },
+  { Icone: FaInstagram, cartao: "bg-vinho text-creme", coluna: "md:col-span-7" },
+  { Icone: LuVideo, cartao: "bg-fumaca text-chocolate", coluna: "md:col-span-5" },
+  { Icone: LuMessagesSquare, cartao: "bg-rosa text-vinho", coluna: "md:col-span-5" },
+  { Icone: LuSmartphone, cartao: "bg-chocolate text-creme", coluna: "md:col-span-7" },
 ];
 
 const canais = [
@@ -191,7 +191,7 @@ export default function Home() {
 
             <div className="md:col-span-6 md:col-start-7">
               <h2 data-anima className="titulo">
-                Mais do que <span className="it text-rosa">marketing,</span> pessoas.
+                Comunicação <span className="it text-rosa">acontece</span> o tempo todo
               </h2>
               <div data-anima style={d(1)} className="mt-7 max-w-[34rem] space-y-4 text-creme/90">
                 {sobre.map((paragrafo) => (
@@ -241,12 +241,12 @@ export default function Home() {
             fill
             loading="eager"
             sizes="100vw"
-            className="object-cover object-[35%_40%]"
+            className="object-cover object-[35%_40%] md:object-[30%_68%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-chocolate/55 via-vinho/45 to-chocolate/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-chocolate/60 via-chocolate/50 to-chocolate/65" />
           <blockquote data-anima className="wrap relative">
             <p className="titulo mx-auto max-w-[18ch] md:!text-[clamp(2.8rem,5.4vw,4.6rem)]">
-              “Imagem pessoal <span className="it text-rosa">também é</span> comunicação.”
+              “A autenticidade <span className="it text-rosa">nunca sai</span> de moda.”
             </p>
             <footer className="mt-5">
               <Nota className="text-rosa">Ana Julia</Nota>
@@ -268,7 +268,7 @@ export default function Home() {
                   <li
                     key={area.titulo}
                     data-anima
-                    style={d(n % 3)}
+                    style={d(n % 2)}
                     className={`flex min-h-60 flex-col justify-between gap-8 p-7 md:p-8 ${cartao} ${coluna}`}
                   >
                     <div>
@@ -282,25 +282,6 @@ export default function Home() {
                 );
               })}
 
-              <li
-                data-anima
-                style={d(1)}
-                className="flex min-h-60 flex-col justify-between gap-8 border border-vinho/25 bg-papel p-7 md:col-span-7 md:p-8"
-              >
-                <h3 className="marca">Ferramentas do dia a dia</h3>
-                <ul className="display flex flex-wrap gap-x-3 gap-y-1 text-[1.7rem] leading-tight md:text-[2rem]">
-                  {ferramentas.map((f, n) => (
-                    <li key={f} className={n % 2 ? "italic" : ""}>
-                      {f}
-                      {n < ferramentas.length - 1 && (
-                        <span aria-hidden="true" className="pl-3 text-base not-italic text-pessego">
-                          ✦
-                        </span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </li>
             </ul>
           </div>
         </section>
@@ -319,7 +300,7 @@ export default function Home() {
                 <div>
                   <h3 className="display text-3xl leading-none">Tecnólogo em Marketing</h3>
                   <p className="mt-2 font-semibold">Univali, Universidade do Vale do Itajaí</p>
-                  <p className="text-preto/75">Previsão de conclusão: abril de 2027</p>
+                  <p className="text-preto/75">Previsão de conclusão: março de 2027</p>
                 </div>
               </div>
 

@@ -1,5 +1,11 @@
-# Produção no VPS, em /opt/site-ana. O HTTPS e o domínio ficam no Caddy do
-# projeto ninshiki, que alcança este contêiner pelo nome "site-ana" na rede dele.
+# Produção isolada, em /opt/site-ana no VPS: o site e o proxy dele (Caddy, com
+# HTTPS automático) em rede própria, atendendo num IP só deste projeto.
+# Nada aqui depende de outro sistema do servidor.
+#
+# O .env do servidor precisa ter, além das credenciais do painel:
+#   BIND_IP=<IP dedicado ao site>
+name: site-ana
+
 services:
   site-ana:
     build: .
@@ -8,11 +14,32 @@ services:
     env_file: .env # ADMIN_USUARIO, ADMIN_SENHA e SESSAO_SEGREDO
     volumes:
       - ./dados:/app/dados
-    networks: [borda]
+    networks: [interna]
     mem_limit: 768m
     security_opt: ["no-new-privileges:true"]
 
+  caddy:
+    image: caddy:2-alpine
+    container_name: site-ana-caddy
+    restart: unless-stopped
+    depends_on: [site-ana]
+    ports:
+      - "${BIND_IP:?defina BIND_IP no .env do servidor}:80:80"
+      - "${BIND_IP}:443:443"
+      - "${BIND_IP}:443:443/udp"
+    volumes:
+      # A pasta inteira (e não só o arquivo) é montada para que uma nova versão
+      # do Caddyfile enviada pelo deploy seja vista pelo contêiner.
+      - ./deploy/caddy:/etc/caddy:ro
+      - caddy_dados:/data
+      - caddy_config:/config
+    networks: [interna]
+    mem_limit: 256m
+    security_opt: ["no-new-privileges:true"]
+
 networks:
-  borda:
-    external: true
-    name: ninshiki-prod_default
+  interna: {}
+
+volumes:
+  caddy_dados: {}
+  caddy_config: {}

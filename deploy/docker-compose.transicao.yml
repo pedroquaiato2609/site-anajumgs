@@ -1,0 +1,21 @@
+# TRANSIÇÃO: usado só enquanto o site ainda não tem IP próprio. O contêiner fica
+# na rede do ninshiki e é o Caddy de lá que atende o domínio. Depois de rodar
+# deploy/isolar.sh, este arquivo deixa de ser usado e pode ser apagado.
+name: site-ana
+
+services:
+  site-ana:
+    build: .
+    container_name: site-ana
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./dados:/app/dados
+    networks: [borda]
+    mem_limit: 768m
+    security_opt: ["no-new-privileges:true"]
+
+networks:
+  borda:
+    external: true
+    name: ninshiki-prod_default

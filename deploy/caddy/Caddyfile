@@ -1,0 +1,17 @@
+# Proxy do site da Ana Julia: HTTPS automático (Let's Encrypt) e encaminhamento
+# para o contêiner do site, na rede interna deste projeto.
+
+anajumgs.com.br {
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		-Server
+	}
+
+	reverse_proxy site-ana:3000
+}
+
+www.anajumgs.com.br {
+	redir https://anajumgs.com.br{uri} permanent
+}

@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Caveat, Fraunces, Schibsted_Grotesk } from "next/font/google";
+import { Instrument_Serif, Mrs_Saint_Delafield, Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const serifa = Instrument_Serif({
   subsets: ["latin"],
+  weight: "400",
   style: ["normal", "italic"],
-  axes: ["opsz"],
-  variable: "--font-fraunces",
+  variable: "--font-serifa",
   display: "swap",
 });
 
@@ -16,16 +16,16 @@ const grotesk = Schibsted_Grotesk({
   display: "swap",
 });
 
-const caveat = Caveat({
+const assinatura = Mrs_Saint_Delafield({
   subsets: ["latin"],
-  weight: ["600"],
-  variable: "--font-caveat",
+  weight: "400",
+  variable: "--font-assinatura",
   display: "swap",
 });
 
-const titulo = "Ana Julia Magalhães | Marketing & Comunicação";
+const titulo = "Ana Julia Magalhães | Comunicação, Marketing e Moda";
 const descricao =
-  "Portfólio de Ana Julia Magalhães da Silva: Social Media, conteúdo audiovisual, eventos e storymaking. Marketing com propósito para aproximar pessoas e marcas.";
+  "Portfólio de Ana Julia Magalhães da Silva: Social Media, audiovisual, storymaking de eventos e comunicação. De um look do dia a um roteiro de vídeo.";
 
 export const metadata: Metadata = {
   title: titulo,
@@ -33,11 +33,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Ana Julia Magalhães da Silva" }],
   keywords: [
     "Ana Julia Magalhães",
-    "Marketing",
     "Comunicação",
+    "Marketing",
+    "Moda",
     "Social Media",
     "Storymaker",
-    "Criação de conteúdo",
     "Brusque",
   ],
   openGraph: {
@@ -54,7 +54,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${fraunces.variable} ${grotesk.variable} ${caveat.variable}`} suppressHydrationWarning>
+    <html
+      lang="pt-BR"
+      className={`${serifa.variable} ${grotesk.variable} ${assinatura.variable}`}
+      suppressHydrationWarning
+    >
       <body>
         {/* Liga os estados iniciais das animações só quando há JavaScript. */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('anima')" }} />

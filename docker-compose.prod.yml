@@ -1,0 +1,18 @@
+# Produção no VPS, em /opt/site-ana. O HTTPS e o domínio ficam no Caddy do
+# projeto ninshiki, que alcança este contêiner pelo nome "site-ana" na rede dele.
+services:
+  site-ana:
+    build: .
+    container_name: site-ana
+    restart: unless-stopped
+    env_file: .env # ADMIN_USUARIO, ADMIN_SENHA e SESSAO_SEGREDO
+    volumes:
+      - ./dados:/app/dados
+    networks: [borda]
+    mem_limit: 768m
+    security_opt: ["no-new-privileges:true"]
+
+networks:
+  borda:
+    external: true
+    name: ninshiki-prod_default

@@ -31,7 +31,10 @@ export function Polaroid({
   className?: string;
 }) {
   return (
-    <figure className={`polaroid ${className}`} style={{ "--giro": `${giro}deg` } as React.CSSProperties}>
+    <figure
+      className={`polaroid ${legenda ? "" : "!pb-9"} ${className}`}
+      style={{ "--giro": `${giro}deg` } as React.CSSProperties}
+    >
       <Fita className="-top-3 left-1/2 -translate-x-1/2 -rotate-2" />
       <div className={`foto ${proporcao}`}>
         <Image src={foto} alt={alt} fill placeholder="blur" sizes={sizes} className={`object-cover ${posicao}`} />

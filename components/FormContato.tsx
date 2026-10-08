@@ -6,7 +6,7 @@ import { LuCheck, LuSend } from "react-icons/lu";
 import { contato } from "@/lib/content";
 
 const assuntos = [
-  "Social Media",
+  "Gestão de social media",
   "Conteúdo audiovisual",
   "Cobertura de evento",
   "Palestra",
@@ -83,8 +83,8 @@ export default function FormContato() {
         </span>
         <h3 className="display text-3xl text-vinho">Mensagem enviada</h3>
         <p className="max-w-[26rem]">
-          Obrigada, {campos.nome.trim().split(" ")[0]}! A Ana Julia recebeu sua mensagem e responde
-          pelo e-mail informado.
+          Obrigada, {campos.nome.trim().split(" ")[0]}! Recebi sua mensagem e respondo pelo e-mail
+          informado.
         </p>
         <button
           type="button"
@@ -207,7 +207,7 @@ export default function FormContato() {
         </a>
       </div>
       <p className="text-sm text-preto/65 sm:col-span-2">
-        Seus dados são usados somente para a Ana Julia responder ao seu contato.
+        Seus dados são usados somente para eu responder ao seu contato.
       </p>
     </form>
   );

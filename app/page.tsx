@@ -26,15 +26,23 @@ import { areas, contato, cursos, selos, sobre } from "@/lib/content";
 
 // Fotografias originais, importadas diretamente de fotos-reais/ sem edição.
 import fotoPerfil from "@/fotos-reais/ana-julia-01.jpeg";
-import fotoTelao from "@/fotos-reais/ana-julia-02.jpeg";
 import fotoPalestra from "@/fotos-reais/ana-julia-03.jpeg";
 import fotoPlateia from "@/fotos-reais/ana-julia-04.jpeg";
 import fotoRetrato from "@/fotos-reais/ana-julia-05.jpeg";
+import fotoPalco from "@/fotos-reais/ana-julia-06.jpeg";
+import fotoPainel from "@/fotos-reais/ana-julia-07.jpeg";
 
 const i = (n: number) => ({ "--i": n }) as React.CSSProperties;
 const d = (n: number) => ({ "--d": n }) as React.CSSProperties;
 
 const faixa = ["Comunicação", "Marketing", "Moda", "Social Media", "Audiovisual", "Storymaker", "Palestras"];
+
+// Quadros da tira de filme ao lado do retrato, com o enquadramento de cada foto.
+const tiraDeFilme = [
+  { foto: fotoPalco, posicao: "object-[35%_58%]" },
+  { foto: fotoPalestra, posicao: "object-center" },
+  { foto: fotoPainel, posicao: "object-[58%_45%]" },
+];
 
 const estiloAreas: { Icone: IconType; cartao: string; coluna: string }[] = [
   { Icone: FaInstagram, cartao: "bg-vinho text-creme", coluna: "md:col-span-7" },
@@ -120,10 +128,10 @@ export default function Home() {
             <h1 className="display text-[clamp(2.9rem,13vw,4.2rem)] uppercase leading-[0.9] md:text-[clamp(4.2rem,7.8vw,7.4rem)]">
               <span className="linha block">
                 <span style={i(1)}>Comunicação</span>
-              </span>
+              </span>{" "}
               <span className="linha block">
                 <span style={i(2)}>Marketing</span>
-              </span>
+              </span>{" "}
               <span className="linha block">
                 <span className="it text-rosa" style={i(3)}>
                   Moda
@@ -132,8 +140,8 @@ export default function Home() {
             </h1>
 
             <p className="entra mt-6 max-w-[27rem] text-[1.05rem] leading-relaxed text-creme/95" style={i(5)}>
-              A comunicação está presente em todos os lugares, seja de um look do dia a um roteiro
-              de vídeo.
+              A comunicação está presente em todos os lugares, de um look do dia a um roteiro de
+              vídeo.
             </p>
 
             <div className="entra mt-8 flex flex-wrap items-center gap-3" style={i(6)}>
@@ -174,16 +182,15 @@ export default function Home() {
               <Polaroid
                 foto={fotoRetrato}
                 alt="Retrato de Ana Julia sorrindo, de óculos e cabelos cacheados, ao ar livre"
-                legenda="Ana Julia"
                 giro={-4}
                 posicao="object-[50%_28%]"
                 sizes="(min-width: 768px) 30vw, 74vw"
               />
-              {/* Tira de filme com as fotos dos eventos (decorativa: as fotos reaparecem em Trabalhos). */}
+              {/* Tira de filme com fotos de palestras e eventos (decorativa). */}
               <div aria-hidden="true" className="filme absolute -bottom-12 -right-8 w-[36%] md:right-4 md:w-[30%]">
-                {[fotoPlateia, fotoPalestra, fotoTelao].map((foto, n) => (
+                {tiraDeFilme.map(({ foto, posicao }, n) => (
                   <div key={n} className="foto aspect-[4/3]">
-                    <Image src={foto} alt="" fill sizes="10rem" className="object-cover" />
+                    <Image src={foto} alt="" fill sizes="12rem" className={`object-cover ${posicao}`} />
                   </div>
                 ))}
               </div>
@@ -258,7 +265,7 @@ export default function Home() {
         <section id="areas" className="bg-creme py-20 text-vinho md:py-28">
           <div className="wrap">
             <h2 data-anima className="titulo mb-12 text-center md:mb-16">
-              Áreas que eu <span className="it">me solto</span>
+              Áreas em que eu <span className="it">me solto</span>
             </h2>
 
             <ul className="grid gap-4 md:grid-cols-12">
@@ -298,7 +305,7 @@ export default function Home() {
                   <LuGraduationCap aria-hidden="true" />
                 </span>
                 <div>
-                  <h3 className="display text-3xl leading-none">Tecnólogo em Marketing</h3>
+                  <h3 className="display text-3xl leading-none">Tecnologia em Marketing</h3>
                   <p className="mt-2 font-semibold">Univali, Universidade do Vale do Itajaí</p>
                   <p className="text-preto/75">Previsão de conclusão: março de 2027</p>
                 </div>
@@ -331,7 +338,7 @@ export default function Home() {
                 <p className="marca text-fumaca">Fluente em</p>
                 <p className="display mt-2 text-[clamp(4rem,9vw,6rem)] italic leading-[0.9] text-rosa">Libras</p>
                 <p className="mt-4 max-w-[20rem] leading-snug text-creme/90">
-                  Língua Brasileira de Sinais, com fluência.
+                  Língua Brasileira de Sinais
                 </p>
               </div>
 
@@ -339,12 +346,12 @@ export default function Home() {
                 <div className="flex items-center gap-3 border-t border-vinho/30 py-4">
                   <LuLanguages aria-hidden="true" className="shrink-0 text-xl text-vinho" />
                   <dt className="font-semibold">Inglês</dt>
-                  <dd className="ml-auto text-right text-preto/75">Básico / Intermediário</dd>
+                  <dd className="ml-auto text-right text-preto/75">Básico a intermediário</dd>
                 </div>
                 <div className="flex items-center gap-3 border-y border-vinho/30 py-4">
                   <LuPlane aria-hidden="true" className="shrink-0 text-xl text-vinho" />
                   <dt className="font-semibold">Disponibilidade</dt>
-                  <dd className="ml-auto text-right text-preto/75">Viagens e eventos</dd>
+                  <dd className="ml-auto text-right text-preto/75">Para viagens e eventos</dd>
                 </div>
               </dl>
             </div>

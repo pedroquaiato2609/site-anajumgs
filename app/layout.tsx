@@ -25,7 +25,7 @@ const assinatura = Mrs_Saint_Delafield({
 
 const titulo = "Ana Julia Magalhães | Comunicação, Marketing e Moda";
 const descricao =
-  "Portfólio de Ana Julia Magalhães da Silva: Social Media, audiovisual, storymaking de eventos e comunicação. De um look do dia a um roteiro de vídeo.";
+  "Portfólio de Ana Julia Magalhães da Silva: social media, audiovisual, storymaking de eventos e comunicação, de um look do dia a um roteiro de vídeo.";
 
 export const metadata: Metadata = {
   title: titulo,

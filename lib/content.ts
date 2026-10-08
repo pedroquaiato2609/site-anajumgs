@@ -20,14 +20,14 @@ export const menu = [
 ] as const;
 
 export const sobre = [
-  "Gosto de estar perto de tudo que envolve comunicação, seja no bastidor de um evento, no roteiro de um vídeo, num stories mostrando o que está rolando, ou montando um look do dia inspirado em algo que vi no Pinterest. Pra mim, imagem pessoal também é comunicação: sempre fui de me vestir bem em qualquer lugar e isso faz parte de como eu penso sobre os conteúdos para as redes sociais.",
-  "Curso Marketing na Univali e atuo como freelancer em criação de conteúdo.",
-  "Me aventuro em cima dos palcos e ao criar conteúdo sobre comunicação, beleza e criatividade.",
+  "Gosto de estar perto de tudo que envolve comunicação, seja no bastidor de um evento, no roteiro de um vídeo, num story mostrando o que está rolando ou na montagem de um look do dia inspirado em algo que vi no Pinterest. Para mim, imagem pessoal também é comunicação: sempre fui de me vestir bem em qualquer lugar, e isso faz parte de como penso os conteúdos para as redes sociais.",
+  "Curso Tecnologia em Marketing na Univali e atuo como freelancer na criação de conteúdo.",
+  "Também subo aos palcos e crio conteúdo sobre comunicação, beleza e criatividade.",
 ];
 
 export const selos = [
   "Brusque, SC",
-  "Marketing na Univali",
+  "Tecnologia em Marketing na Univali",
   "Freelancer em criação de conteúdo",
   "Palestrante",
   "Fluente em Libras",
@@ -37,7 +37,7 @@ export const areas = [
   {
     titulo: "Social Media",
     texto:
-      "Gestão de Instagram, LinkedIn, TikTok e YouTube. Minha parte favorita é analisar métricas e entender o que realmente funciona pra cada rede.",
+      "Gestão de perfis no Instagram, LinkedIn, TikTok e YouTube. Minha parte favorita é analisar métricas e entender o que realmente funciona para cada rede.",
   },
   {
     titulo: "Audiovisual",
@@ -46,11 +46,11 @@ export const areas = [
   {
     titulo: "Comunicação",
     texto:
-      "Comunicação institucional e palestras sobre autocuidado. Gosto de escrever, estudar e falar sobre o tema.",
+      "Comunicação institucional e palestras sobre autocuidado e comunicação multigeracional. Gosto de escrever, estudar e falar sobre esses temas.",
   },
   {
     titulo: "Eventos",
-    texto: "Cobertura em tempo real como storymaker.",
+    texto: "Cobertura de eventos como storymaker, contando a história de quem esteve lá.",
   },
 ];
 

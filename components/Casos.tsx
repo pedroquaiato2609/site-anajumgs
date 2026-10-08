@@ -25,10 +25,9 @@ const casos = [
     titulo: "Social",
     italico: "Media",
     texto:
-      "Gestão de Instagram, LinkedIn, TikTok e YouTube: planejamento de conteúdo, publicações toda semana e análise de métricas e do crescimento dos perfis.",
+      "Gestão de perfis no Instagram, LinkedIn, TikTok e YouTube: planejamento de conteúdo, publicações semanais e análise de métricas e do crescimento dos perfis.",
     foto: fotoPlateia,
     alt: "Ana Julia sentada na plateia de um evento, gravando com o celular",
-    legenda: "de olho no palco",
     posicao: "object-[30%_50%]",
     giro: -3,
     comRedes: true,
@@ -40,10 +39,9 @@ const casos = [
     titulo: "Conteúdo",
     italico: "Audiovisual",
     texto:
-      "Roteiros, captação e edição de vídeos institucionais, da montagem do cenário à maquiagem para a gravação.",
+      "Do roteiro à edição final, crio e edito vídeos institucionais, cuidando também do cenário e da maquiagem para a gravação.",
     foto: fotoTelao,
     alt: "Ana Julia filmando com o celular um telão iluminado em um evento",
-    legenda: "registrando o telão",
     posicao: "object-[42%_50%]",
     giro: 3,
     comRedes: false,
@@ -54,10 +52,9 @@ const casos = [
     cor: "bg-creme text-vinho",
     titulo: "Storymaker",
     italico: "de eventos",
-    texto: "Registrando o que está acontecendo ao vivo.",
+    texto: "Do bastidor ao palco, transformo cada momento do evento em story.",
     foto: fotoPalestra,
     alt: "Celular nas mãos de Ana Julia gravando uma palestra; na plateia, camisetas com a frase Conectados de Norte a Sul",
-    legenda: "gravando a palestra",
     posicao: "object-[36%_50%]",
     giro: -2,
     comRedes: false,
@@ -116,7 +113,6 @@ export default function Casos() {
           <Polaroid
             foto={caso.foto}
             alt={caso.alt}
-            legenda={caso.legenda}
             giro={caso.giro}
             proporcao="aspect-[5/4]"
             posicao={caso.posicao}
